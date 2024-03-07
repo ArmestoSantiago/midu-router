@@ -7,7 +7,6 @@ export function navigation (href) {
 }
 
 export function Link ({ target, to, ...props }) {
-  console.log(props);
   const handleClick = (event) => {
     const isMainEvent = event.button === 0;
     const isModifiedEvent = event.ctrlClick || event.metaKey || event.altKey || event.shiftKey;
@@ -17,6 +16,8 @@ export function Link ({ target, to, ...props }) {
       event.preventDefault();
       navigation(to);
     }
+
+    window.scrollTo(0, 0);
   };
 
   return (
